@@ -1,10 +1,10 @@
-import ReactModal from 'components/react-modal';
+import ReactShare2 from 'components/react-share-2';
 
 let instance;
 
-export default class ReactModalCtrl {
+export default class ReactShareCtrl {
   static createInstance(inProps) {
-    instance = instance || ReactModal.newInstance(inProps);
+    instance = instance || ReactShare2.newInstance(inProps);
     return instance;
   }
 

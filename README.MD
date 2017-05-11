@@ -1,4 +1,4 @@
-#react-modal
+#react-share
 > Modal components for react(alert/confirm &amp; the common modal components).
 
 
@@ -24,142 +24,61 @@
 
 ## usage:
 ```javascript
-import {ReactModal,ReactModalCtrl} from 'react-modal';
-
-class Body extends React.Component {
-  _click() {
-    ReactModalCtrl.hide();
-  }
-
-  render() {
-    return (
-      <div className="cus-body">
-        <p><span className="bd">Hi Man!</span></p>
-        <p>I am from <strong className="bd">Baidu</strong></p>
-        <p><img onClick={this._click.bind(this)} src="http://www.baidu.com/img/bd_logo1.png"/></p>
-      </div>
-    );
-  }
-}
-
+import {ReactShare,ReactShareItem} from 'react-share';
 
 class App extends React.Component {
-  componentDidMount() {
-    console.log('will / did..');
-    ReactModalCtrl.createInstance({
-      backdropOptions: {
-        zIndex: 11,
-        opacity: 0.1
-      }
-    });
-  }
 
-  _click1() {
-    ReactModalCtrl.show({
-      header: 'Customize <b style="color:#F00">Modal</b>',
-      body: 'Are you feel <b>good</b> today?',
-      theme: 'ios',
-      buttons: [
+  constructor(props) {
+    super(props);
+    this.state = {
+      items: [
         {
-          text: 'option1',
-          onClick: function () {
+          iClass: 'wp-icon-code',
+          eText: '二维码',
+          onClick: () => {
+            console.log('code.....');
           }
-        }, {
-          text: 'option2',
-          onClick: function (item) {
-            console.log('option2', item);
+        },
+        {
+          iClass: 'wp-icon-link',
+          eText: '发送链接',
+          onClick: () => {
+            console.log('link....');
           }
-        }, {
-          text: 'CLOSE',
-          onClick: function (item) {
-            ReactModalCtrl.hide();
-          }
-        }
-      ]
-    });
-  }
+        }]
+    };
 
+  }
 
   _click2() {
-    console.log('click2....');
-    ReactModalCtrl.show({
-      header: '<b>Title</b><span style="color:#F00">With Color</span>',
-      body: <Body />,
-      buttons: []
-    });
+    const {rp2} = this.refs;
+    rp2.show();
   }
 
   _click3() {
-    console.log('click3....');
-    ReactModalCtrl.show({
-      header: 'IOS Settings',
-      body: 'Are you sure to change this one?',
-      theme: 'transparent',
-      buttons: [{
-        text: 'OK',
-        onClick: function (item) {
-          ReactModalCtrl.hide();
-        }
-      }]
-    });
-  }
-
-  _click4() {
-    ReactModalCtrl.show({
-      header: null,
-      body: 'NO header content.',
-      buttons: [{
-        text: 'OK',
-        onClick: function (item) {
-          ReactModalCtrl.hide();
-        }
-      }]
-    });
-  }
-
-  _click5() {
-    ReactModalCtrl.show({
-      header: null,
-      body: 'NO header content',
-      theme: 'ios',
-      onClick: function () {
-        ReactModalCtrl.hide();
-      },
-      buttons: [{
-        text: 'options',
-        onClick: function (item) {
-          ReactModalCtrl.hide();
-        }
-      }, {
-        text: 'OK',
-        onClick: function (item) {
-          ReactModalCtrl.hide();
-        }
-      }, {
-        text: 'close',
-        onClick: function (item) {
-          ReactModalCtrl.hide(() => {
-            console.log('close...');
-          });
-        }
-      }]
-    }, () => {
-      console.log('show....');
-    });
+    console.log('click3......');
   }
 
   render() {
+    const {items} = this.state;
     return (
-      <div className="hello-react-modal">
-        <button onClick={this._click1.bind(this)}>TEST MODAL</button>
-        <button onClick={this._click2.bind(this)}>TEST MODAL- Component body</button>
-        <button onClick={this._click3.bind(this)}>IOS Alert</button>
-        <button onClick={this._click4.bind(this)}>IOS Alert4</button>
-        <button onClick={this._click5.bind(this)}>TEST MODAL 5</button>
+      <div className="hello-react-share">
+        <button onClick={this._click2.bind(this)} children="open share 2"/>
+        <ReactPopup ref="rp2">
+          <ReactShare2 >
+            {
+              !!items && items.map((item, index) => {
+                return <ReactShareItem key={index} className="col" onClick={item.onClick.bind(this)}>
+                  <i className={classNames('wp-icon', item.iClass)}/>
+                  <em children={item.eText}/>
+                </ReactShareItem>
+              })
+            }
+          </ReactShare2>
+        </ReactPopup>
       </div>
     );
   }
 }
-
 
 ```

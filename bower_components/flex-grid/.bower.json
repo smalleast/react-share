@@ -1,0 +1,34 @@
+{
+  "name": "flex-grid",
+  "description": "flex grid.",
+  "main": "dist/flex-grid.scss",
+  "authors": [
+    "smalleast"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "next"
+  ],
+  "homepage": "https://github.com/smalleast/flex-grid",
+  "moduleType": [
+    "amd"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "src"
+  ],
+  "_release": "e8d78015d3",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "e8d78015d3c86e8ca01943f81b64b530b2dfd7b0"
+  },
+  "_source": "https://github.com/smalleast/flex-grid.git",
+  "_target": "*",
+  "_originalSource": "smalleast/flex-grid",
+  "_direct": true
+}

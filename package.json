@@ -78,10 +78,12 @@
   "dependencies": {
     "calc-style": "github:smalleast/calc-style",
     "classnames": "^2.2.5",
+    "flex-grid": "github:smalleast/flex-grid",
     "node-sass": "^3.13.1",
     "react": "^15.4.1",
     "react-backdrop": "github:smalleast/react-backdrop",
     "react-document-append": "github:smalleast/react-document-append",
-    "react-dom": "^15.4.1"
+    "react-dom": "^15.4.1",
+    "react-popup": "github:afeiship/react-popup"
   }
 }

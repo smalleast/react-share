@@ -1,48 +1,47 @@
-*{margin: 0;padding: 0;}
-html,body{
-  height:100%;
+.hello-react-share {
+  color: #F00;
+  padding: 100px 20px;
   position: relative;
-}
-.hello-react-modal{
-  color:#F00;
-
-  padding:50px 20px;
-
-  button{
-    border: none;
+  button {
+    background: #3cc51f;
+    width: 100%;
     display: block;
-    width:100%;
-    padding-left: 14px;
-    padding-right: 14px;
-    font-size: 18px;
-    text-align: center;
-    text-decoration: none;
-    overflow: visible;
-    height: 42px;
-    border-radius: 5px;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    color: #ffffff;
-    line-height: 42px;
-    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
-    background: #04be02;
-    margin-bottom: 15px;
-    &:active{
-      background: #3cc51f;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    color: #FFF;
+    padding: 20px;
+    border: none;
+
+    &:active {
+      background: darken(#3cc51f, 10%);
     }
 
-    &:focus{
+    &:focus {
       outline: none;
     }
   }
 }
 
-.react-modal-wrapper{
-  img{
-    width:100%;
-    display: block;
+.wp-icon {
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;
+  &-code {
+    width: 55px;
+    height: 55px;
+    background-image: url("assets/images/wp-share-1.png");
+    &:active {
+      background-image: url("assets/images/wp-share-2.png");
+    }
+    margin-bottom: -3px;
+  }
+  &-link {
+    width: 55px;
+    height: 55px;
+    background-image: url("assets/images/wp-share-3.png");
+    &:active {
+      background-image: url("assets/images/wp-share-4.png");
+    }
+    margin-bottom: -3px;
   }
 }

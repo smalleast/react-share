@@ -9,8 +9,8 @@ base.entry = {
 base.output = {
   path: config.build.assetsRoot,
   publicPath: config.build.assetsPublicPath,
-  filename: 'react-modal.js',
-  library: 'ReactModal',
+  filename: 'react-share.js',
+  library: 'ReactShare',
   libraryTarget: 'umd'
 }
 
