@@ -9,7 +9,6 @@ export default class ReactShareCtrl {
   }
 
   static show(inOptions, inCallback) {
-    console.log(instance);
     instance.component.show(inOptions, inCallback);
   }
 
