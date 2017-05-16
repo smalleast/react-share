@@ -1,6 +1,8 @@
 /**
  * Created by tony on 2017/5/11.
  */
+import '../../bower_components/flex-grid/dist/flex-grid.scss';
+import './style.scss'
 import React, {PureComponent, PropTypes} from 'react';
 import classNames from 'classnames';
 

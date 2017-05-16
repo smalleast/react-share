@@ -55,9 +55,6 @@ class App extends React.Component {
     rp2.show();
   }
 
-  _click3() {
-    console.log('click3......');
-  }
 
   render() {
     const {items} = this.state;
